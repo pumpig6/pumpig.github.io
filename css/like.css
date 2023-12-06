@@ -1,0 +1,177 @@
+
+#slide_1:checked~.header-1 .card,
+#slide_2:checked~.header-2 .card,
+#slide_3:checked~.header-3 .card,
+#slide_4:checked~.header-4 .card {
+    opacity: 1;
+    z-index: 9;
+}
+
+.slider {
+    bottom: 25px;
+    z-index: 1;
+}
+
+.slider .slide {
+    min-width: 155px;
+    height: 36px;
+    margin-top: 38px;
+    margin-left: 28px;
+    background-color: #efefef;
+    display: inline-flex;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.slider p {
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.slider .slide::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+#slide_1:checked~.slider .slide-1::before,
+#slide_2:checked~.slider .slide-2::before,
+#slide_3:checked~.slider .slide-3::before,
+#slide_4:checked~.slider .slide-4::before {
+    width: 100%;
+    transform: scaleX(1);
+}
+
+.wrap {
+    width: auto;
+    height: 90vh;
+    margin-left: 20px;
+    margin-right: 10px;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.nav {
+    width: 100%;
+    position: absolute;
+    height: 96vh;
+    margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    overflow-y: auto;
+    overflow: hidden;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 610px;
+    margin-top: 38px;
+    overflow: hidden;
+    overflow-y: auto;
+    margin-left: 28px;
+}
+
+.role {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    margin-bottom: 38px;
+}
+
+.roles {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+}
+
+.card {
+    opacity: 0;
+    position: relative;
+    width: 370px;
+    height: 450px;
+    background-color: rgba(18, 18, 18, 0.6);
+    overflow: hidden;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.card .photo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card:hover .photo {
+    top: 20px;
+    width: 120px;
+    height: 120px;
+}
+
+.card .photo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.card .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover h1 {
+    position: absolute;
+    top: 150px;
+}
+
+.card h2 {
+    margin-top: 195px;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+}
+
+.card p {
+    width: 90%;
+    text-indent: 28px;
+    font-size: 13px;
+    line-height: 22px;
+    margin-bottom: 2px;
+}
+
+.card a {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 6px 22px;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.card a:hover {
+    color: #fefefe;
+    background-color: rgba(255, 255, 255, 0.2);
+}
